@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <link rel="stylesheet" href="style.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>StreamFlix — Demo</title>
+  <style>
+    :root{
+      --bg:#0b0b0b; --card:#151515; --muted:#bfc7d1;
+      --accent:#e50914;
+      --glass: rgba(255,255,255,0.04);
+    }
+    *{box-sizing:border-box}
+    
+
+    /* Responsive */
+    @media (max-width:720px){.hero{height:260px}.hero h1{font-size:22px}.card img{height:160px}}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="brand">
+      <div class="logo">StreamFlix</div>
+      <nav>
+        <a href="nextfilx_fix.html">Home</a>
+        <a href="nextflix_movies.html">Movies</a>
+        <a href="#">Series</a>
+        <a href="#">My List</a>
+      </nav>
+    </div>
+
+<div class="actions">
+  <input id="search" class="search" placeholder="Tìm phim, chương trình..." />
+
+  <a href="netflix_chill.html">
+    <button class="btn" id="signin">Đăng nhập</button>
+  </a>
+</div>
+  </header>
+
+
+
+  <main>
+    <section>
+      <div class="row-title">
+        <h3>Popular on StreamFlix</h3>
+        <div style="color:var(--muted);font-size:13px">Showing <span id="count">0</span> results</div>
+      </div>
+
+      <div id="grid" class="grid"></div>
+    </section>
+  </main>
+
+  <footer>
+    © <span id="year"></span> StreamFlix — Demo UI. Không phải sản phẩm thật.
+  </footer>
+
+  <!-- Modal -->
+  <div id="overlay" class="overlay">
+    <div class="modal">
+      <div style="position:relative">
+        <button id="closeModal" class="close">X</button>
+        <div class="inner">
+          <img id="modalImg" src="" alt="cover" />
+          <div class="info">
+            <h2 id="modalTitle">Title</h2>
+            <p id="modalOverview">Overview</p>
+            <div style="margin-top:12px">
+              <button class="btn" id="playBtn">Play Trailer</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Player -->
+  <div id="player" class="player">
+    <div id="videoContainer" style="width:100%;max-width:1100px;position:relative">
+      <video id="videoPlayer" controls style="width:100%;height:auto;border-radius:8px"></video>
+      <div id="iframeContainer" style="width:100%;aspect-ratio:16/9;border-radius:8px;overflow:hidden;display:none"></div>
+    </div>
+    <button id="closePlayer" class="close" style="position:fixed;right:30px;top:30px">✕</button>
+  </div>
+
+  <script src="./seri.js"></script>
+  
+</body>
+</html>

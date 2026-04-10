@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <link rel="stylesheet" href="style.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>StreamFlix — Demo</title>
+  <style>
+    :root{
+      --bg:#0b0b0b; --card:#151515; --muted:#bfc7d1;
+      --accent:#e50914;
+      --glass: rgba(255,255,255,0.04);
+    }
+    *{box-sizing:border-box}
+    
+    /* Carousel */
+
+  </style>
+</head>
+<body>
+  <header>
+    <div class="brand">
+      <div class="logo">StreamFlix</div>
+      <nav>
+        <a href="#">Home</a>
+        <a href="nextflix_movies.html">Movies</a>
+        <a href="nextflix_series.html">Series</a>
+        <a href="#">My List</a>
+      </nav>
+    </div>
+
+<div class="actions">
+  <input id="search" class="search" placeholder="Tìm phim, chương trình..." />
+
+  <a href="netflix_login.html">
+    <button class="btn" id="signin">Đăng nhập</button>
+  </a>
+</div>
+  </header>
+
+  <section id="hero" class="hero" style="background-image:url('https://daknong.1cdn.vn/2025/11/25/dan-dien-vien-phu-trong-stranger-things-5.jpg')">
+    <div class="hero-inner">
+      <h1 id="heroTitle">Stranger things</h1>
+      <p id="heroOverview">Một đội lập trình viên dấn thân vào một hành trình để tìm kho dữ liệu cổ - một câu chuyện phiêu lưu hài hước và xúc động.</p>
+      <div class="controls">
+        <button class="btn" id="playHero">Play</button>
+
+      </div>
+    </div>
+  </section>
+
+  <main>
+    <section style="max-width: 1500px; margin: 0 auto;">
+      <div class="row-title" style="padding: 0 40px;">
+        <h3>Popular on StreamFlix</h3>
+        <div style="color:var(--muted);font-size:13px">Showing <span id="count">0</span> results</div>
+      </div>
+
+      <div class="carousel-container">
+        <button class="carousel-btn prev" id="prevBtn">‹</button>
+        <div class="carousel-wrapper">
+          <div id="grid" class="grid carousel"></div>
+        </div>
+        <button class="carousel-btn next" id="nextBtn">›</button>
+      </div>
+    </section>
+  </main>
+
+  <section style="max-width: 1500px; margin: 40px auto 0;">
+    <div class="row-title" style="padding: 0 40px;">
+      <h3>Popular this weekend</h3>
+      <div style="color:var(--muted);font-size:13px">Showing <span id="weekendCount">0</span> results</div>
+    </div>
+  
+    <div class="carousel-container">
+      <button class="carousel-btn prev" id="weekendPrevBtn">‹</button>
+      <div class="carousel-wrapper">
+        <div id="weekendGrid" class="grid carousel">
+          
+        </div>
+      </div>
+      <button class="carousel-btn next" id="weekendNextBtn">›</button>
+    </div>
+  </section>
+  
+
+  <footer>
+     <span id="year"></span> 
+  </footer>
+
+  <!-- Modal -->
+  <div id="overlay" class="overlay">
+    <div class="modal">
+      <div style="position:relative">
+        <button id="closeModal" class="close">✕</button>
+        <div class="inner">
+          <img id="modalImg" src="" alt="cover" />
+          <div class="info">
+            <h2 id="modalTitle">Title</h2>
+            <p id="modalOverview">Overview</p>
+            <div style="margin-top:12px">
+              <button class="btn" id="playBtn">Play Trailer</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Player -->
+  <div id="player" class="player">
+    <div id="videoContainer" style="width:100%;max-width:1100px;position:relative">
+      <video id="videoPlayer" controls style="width:100%;height:auto;border-radius:8px"></video>
+      <div id="iframeContainer" style="width:100%;aspect-ratio:16/9;border-radius:8px;overflow:hidden;display:none"></div>
+    </div>
+    <button id="closePlayer" class="close" style="position:fixed;right:30px;top:30px">✕</button>
+  </div>
+  <script src="./main.js"></script>
+  <script src="./api.js"></script>
+  
+</body>
+</html>
