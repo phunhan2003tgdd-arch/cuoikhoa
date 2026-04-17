@@ -211,8 +211,8 @@ footer {
   position: absolute;
   right: 18px;
   top: 18px;
-  background: rgba(255,255,255,0.06);
-  border-radius: 6px;
+  background: rgb(34, 34, 34);
+  border-radius: 99px;
   padding: 6px;
   cursor: pointer;
   color: white;
@@ -222,7 +222,7 @@ footer {
 .player {
   position: fixed;
   inset: 0;
-  background: #000;
+  background: rgb(34, 34, 34);
   display: none;
   align-items: center;
   justify-content: center;
@@ -314,4 +314,8 @@ footer {
 
 #heroTitle{
   transition: 0.3s;
+}
+
+.cardweekend img{
+  border-radius: 12px;
 }

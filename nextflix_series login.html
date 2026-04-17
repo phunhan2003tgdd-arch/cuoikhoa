@@ -1,11 +1,10 @@
 <!doctype html>
 <html lang="vi">
 <head>
+  <link rel="stylesheet" href="style.css">
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>StreamFlix — Demo</title>
-  <link rel="stylesheet" href="style.css">
-
   <style>
     :root{
       --bg:#0b0b0b; --card:#151515; --muted:#bfc7d1;
@@ -14,29 +13,30 @@
     }
     *{box-sizing:border-box}
     
-    /* Carousel */
 
+    /* Responsive */
+    @media (max-width:720px){.hero{height:260px}.hero h1{font-size:22px}.card img{height:160px}}
   </style>
-
 </head>
 <body>
   <header>
     <div class="brand">
       <div class="logo">StreamFlix</div>
       <nav>
-        <a href="nextfilx_fix.html">Home</a>
-        <a href="#">Movies</a>
-        <a href="nextflix_series.html">Series</a>
-        <a href="nextflix_series.html">My List</a>
+        <a href="nextfilx_fix login.html">Home</a>
+        <a href="nextflix_movies login.html">Movies</a>
+        <a href="#">Series</a>
+        <a href="#">My List</a>
       </nav>
     </div>
 
-    <div class="actions">
-      <a href="netflix_login.html">
-        <button class="btn" id="signin">Đăng nhập</button>
-      </a>
-        
-    </div>
+<div class="actions">
+  <input id="search" class="search" placeholder="Tìm phim, chương trình..." />
+
+  <a href="netflix_chill.html">
+    <button class="btn" id="signin">Đăng xuất</button>
+  </a>
+</div>
   </header>
 
 
@@ -44,7 +44,7 @@
   <main>
     <section>
       <div class="row-title">
-        <h3>Movies on StreamFlix</h3>
+        <h3>Popular on StreamFlix</h3>
         <div style="color:var(--muted);font-size:13px">Showing <span id="count">0</span> results</div>
       </div>
 
@@ -52,13 +52,15 @@
     </section>
   </main>
 
-
+  <footer>
+    © <span id="year"></span> StreamFlix — Demo UI. Không phải sản phẩm thật.
+  </footer>
 
   <!-- Modal -->
   <div id="overlay" class="overlay">
     <div class="modal">
       <div style="position:relative">
-        <button id="closeModal" class="close">✕</button>
+        <button id="closeModal" class="close">X</button>
         <div class="inner">
           <img id="modalImg" src="" alt="cover" />
           <div class="info">
@@ -75,9 +77,14 @@
 
   <!-- Player -->
   <div id="player" class="player">
-    <video id="videoPlayer" controls></video>
+    <div id="videoContainer" style="width:100%;max-width:1100px;position:relative">
+      <video id="videoPlayer" controls style="width:100%;height:auto;border-radius:8px"></video>
+      <div id="iframeContainer" style="width:100%;aspect-ratio:16/9;border-radius:8px;overflow:hidden;display:none"></div>
+    </div>
     <button id="closePlayer" class="close" style="position:fixed;right:30px;top:30px">✕</button>
   </div>
-  <script src="./movies.js"></script>
+
+  <script src="./seri.js"></script>
+  
 </body>
 </html>

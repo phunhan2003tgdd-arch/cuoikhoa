@@ -25,6 +25,21 @@ const movies = [
     count.innerText = list.length;
   }
 
+  function render_weekend(list){
+    grid.innerHTML = '';
+    // Create multiple copies for infinite loop effect
+    const loopCount = 3;
+    for(let i = 0; i < loopCount; i++) {
+      list.forEach(m => {
+        const el = document.createElement('div'); el.className='card';
+        el.innerHTML = `<img src="${m.cover}" alt="${m.title}"/><div class="meta"><div class="title">${m.title}</div><div class="sub">${m.year} • ${m.rating || ''}</div></div>`;
+        el.addEventListener('click',()=>openModal(m));
+        grid.appendChild(el);
+      });
+    }
+    count.innerText = list.length;
+  }
+
   function openModal(m){
     document.getElementById('overlay').style.display='flex';
     document.getElementById('modalImg').src = m.cover;
@@ -146,3 +161,4 @@ const movies = [
       render(movies);
       // Set initial position after render
       setTimeout(() => updateCarousel(false), 10);
+
